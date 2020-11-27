@@ -25,7 +25,10 @@ def main():
 
     if args.printbook:
         book.printbook()
+
     if ".gif" in args.output_filename:
         book.write_gif(args.output_filename)
     elif ".pdf" in args.output_filename:
         book.write_pdf(args.output_filename)
+    else:
+        print("Only supported extensions are gif and pdf!")

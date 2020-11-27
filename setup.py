@@ -11,7 +11,7 @@ setup(
     author="Prateek Garg",
     author_email="prateekgarg.iitd@gmail.com",
     url="https://github.com/prateekstark/Flipbook",
-    description="Small Package for Hasura recruitment.",
+    description="Small Package to convert a flipbook description into a printable pdf.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
