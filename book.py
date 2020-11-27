@@ -45,17 +45,18 @@ class Book(object):
         pdf.output(outputfile_name, "F")
 
     def write_gif(self, outputfile_name):
-        import imageio
+        from PIL import Image
 
-        with imageio.get_writer(outputfile_name, frame_size=(150, 150), mode='I') as writer:
-            for image_filename in self.dict.values():
-                image = imageio.imread(image_filename)
-                writer.append_data(image)
-
-
-if __name__ == "__main__":
-    book = Book()
-    book.read_flipbook("human_life_span.flip")
-    book.printbook()
-    book.write_pdf("human_life_span.pdf")
-    book.write_gif("human_life_span.gif")
+        frames = []
+        for image_filename in self.dict.values():
+            frame = Image.open(image_filename)
+            frame = frame.resize((360, 500), Image.ANTIALIAS)
+            frames.append(frame)
+        frames[0].save(
+            outputfile_name,
+            save_all=True,
+            append_images=frames[1:],
+            duration=100,
+            loop=0,
+        )
+        del frames

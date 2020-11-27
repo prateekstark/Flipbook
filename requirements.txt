@@ -1,4 +1,3 @@
-re
 argparse
 fpdf
-imageio
+Pillow
