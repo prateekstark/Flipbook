@@ -1,6 +1,6 @@
 # Flipbook
 
-Flipbook is a special-language compiler for describing flipbooks and implement a compiler for this language that can convert a flipbook description into a printable PDF or GIF.
+Flipbook is a special-language compiler for describing flipbooks and finally converting this flipbook description into a printable PDF or GIF.
 
 ## Installation
 
